@@ -1,0 +1,111 @@
+.attribution {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  opacity: 0.5;
+}
+.attribution p {
+  margin: 10px;
+}
+.cardFront,
+.cardBack {
+  max-width: 28rem;
+  height: 15.5rem;
+  border-radius: 10px;
+  background-size: cover;
+  color: var(--White);
+  position: relative;
+  padding: 32px;
+}
+
+/* Card Front ========*/
+.cardFront {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto 32px auto;
+}
+
+.cardFront div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  word-spacing: 6px;
+}
+
+.cardFront > span {
+  font-size: clamp(22px, 2.5vw, 27px);
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.cardFront div span {
+  font-size: 16px;
+}
+
+.cardFront div span:first-child {
+  text-transform: uppercase;
+}
+
+/* Card Back =======*/
+.cardBack {
+  background-size: contain;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 2rem 0 auto;
+}
+
+.cardBack span {
+  position: absolute;
+  right: 60px;
+  top: 109px;
+  font-size: 24px;
+}
+
+.cardFront::after {
+  position: absolute;
+  top: 27px;
+  left: 27px;
+}
+
+/* ===== */
+.cardDeco {
+  width: 54%;
+  padding: 2rem;
+}
+
+.cardOverflow {
+  width: 46%;
+  overflow: hidden;
+}
+
+.cardOverflow > div {
+  transition: transform 0.35s ease-in-out;
+}
+
+.btn-primary {
+  background: var(--Verdarviolet);
+  border: none;
+  padding: 15px 20px;
+  color: var(--White);
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.card-input {
+  padding: 13px;
+  border: 1px solid var(--Dargrayisviolet);
+  border-radius: 7px;
+}
+
+.card-input::placeholder {
+  opacity: 0.7;
+}

@@ -1,0 +1,77 @@
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  margin-left: 10%;
+  padding: 1rem;
+  border: 2px solid red;
+}
+
+.cardForm label {
+  margin-bottom: 16px;
+  gap: 14px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  color: var(--Verdarviolet);
+  font-size: 15px;
+}
+
+.cardForm input:hover {
+  border: 1px solid hsl(249, 99%, 64%);
+}
+
+.labelmm {
+  width: 50%;
+}
+
+.labelcvc {
+  width: 50%;
+}
+
+.labelmm div {
+  display: flex;
+  gap: 10px;
+}
+
+.labelmm input {
+  width: 100%;
+}
+
+.cvc-mmyy {
+  display: flex;
+  margin-bottom: 26px;
+  position: relative;
+  gap: 10px;
+}
+
+.cvc-mmyy .info {
+  position: absolute;
+  bottom: -40px;
+  transform: translateY(-25px);
+}
+
+.cvc-mmyy .info:last-child {
+  right: 1rem;
+}
+
+.info {
+  transition: height 0.3s ease-in-out;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  height: 20px;
+  color: var(--Red);
+  transform: translateY(-10px);
+  margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .cardForm {
+    padding: 2rem;
+    margin-left: auto;
+    margin-top: 20rem;
+    max-width: 100%;
+  }
+}
