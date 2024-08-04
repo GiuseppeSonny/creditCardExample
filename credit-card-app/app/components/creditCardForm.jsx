@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import styles from "./form.module.scss";
+import CardValidator from "./cardValidator";
 
 export default function CardForm({ setFormData, formData }) {
   const numberInputRef = useRef(null);
@@ -84,6 +85,13 @@ export default function CardForm({ setFormData, formData }) {
       return;
     }
   };
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    const { number, name, mm, yy, cvc } = formData;
+    setFormData({ ...formData, validate: true });
+  };
+
   return (
     <form className={styles.cardForm} onSubmit={handleSubmit}>
       <label className={styles.labelname}>
@@ -146,7 +154,7 @@ export default function CardForm({ setFormData, formData }) {
         </label>
       </div>
 
-      <button type="submit" className={styles.button} onClick={handleSubmit}>
+      <button type="submit" className={styles.button} onClick={CardValidator}>
         Confirm
       </button>
     </form>

@@ -1,9 +1,8 @@
 "use client";
 
-export default function CardValidator({ setFormData, animateSlider }) {
+export default function CardValidator({ setFormData }) {
   const resetForm = () => {
     setFormData({ name: null, number: null, mm: null, yy: null, cvc: null });
-    animateSlider(false);
   };
 
   return (
