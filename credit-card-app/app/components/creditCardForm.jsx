@@ -146,7 +146,7 @@ export default function CardForm({ setFormData, formData }) {
         </label>
       </div>
 
-      <button type="button" className={styles.button} onClick={handleSubmit}>
+      <button type="submit" className={styles.button} onClick={handleSubmit}>
         Confirm
       </button>
     </form>

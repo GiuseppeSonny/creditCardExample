@@ -3,12 +3,15 @@
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  margin-left: 10%;
+  margin-left: auto;
   height: 100vh;
   padding: 1rem;
   border: 2px solid red;
   gap: 12px;
   background-color: #f7f7f7;
+  position: fixed;
+  top: 1px;
+  right: 1px;
 }
 
 .cardForm label {
@@ -29,4 +32,11 @@
   font-size: 14px;
   background-color: #ffffff;
   background: linear-gradient(to right, #4a00e0, #8e2de2);
+}
+
+@media only screen and (max-width: 767px) {
+  .cardForm {
+    position: static;
+    width: 100%;
+  }
 }
