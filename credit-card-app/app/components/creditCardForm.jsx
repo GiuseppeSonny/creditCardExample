@@ -9,6 +9,7 @@ export default function CardForm({ setFormData, formData }) {
   const mmInputRef = useRef(null);
   const yyInputRef = useRef(null);
   const cvcInputRef = useRef(null);
+  const [isvalid, setIsvalid] = useState(false);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -84,13 +85,23 @@ export default function CardForm({ setFormData, formData }) {
     if (hasErrors) {
       return;
     }
+    setIsvalid(true)
   };
 
   const handleButtonClick = (e) => {
     e.preventDefault();
     const { number, name, mm, yy, cvc } = formData;
-    setFormData({ ...formData, validate: true });
+    setFormData({ ...formData, isvalid: true });
   };
+
+  const handleClearForm = () => {
+  
+
+    numberInputRef.current.value = "";
+    mmInputRef.current.value = "";
+    yyInputRef.current.value = "";
+    cvcInputRef.current.value = "";
+  }
 
   return (
     <form className={styles.cardForm} onSubmit={handleSubmit}>
@@ -154,7 +165,7 @@ export default function CardForm({ setFormData, formData }) {
         </label>
       </div>
 
-      <button type="submit" className={styles.button} onClick={CardValidator}>
+      <button type="submit" className={styles.button} onClick={handleClearForm}>
         Confirm
       </button>
     </form>
