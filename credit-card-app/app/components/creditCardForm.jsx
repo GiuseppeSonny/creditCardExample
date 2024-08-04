@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import styles from "./form.module.scss";
 
-export default function CardForm({ setFormData, formData, animateSlider }) {
+export default function CardForm({ setFormData, formData }) {
   const numberInputRef = useRef(null);
   const mmInputRef = useRef(null);
   const yyInputRef = useRef(null);
@@ -41,63 +41,47 @@ export default function CardForm({ setFormData, formData, animateSlider }) {
     setFormData({ ...formData, [name]: newValue });
   };
 
-  const handleError = (target, message = "Error", type = "add") => {
-    const errorElement = document.querySelector(`.label${target} + p.info`);
-    const inputElement = document.querySelector(`[name="${target}"]`);
-
-    if (type === "add") {
-      errorElement.classList.remove(styles["info--hidden"]);
-      errorElement.textContent = message;
-      inputElement.classList.add(styles["input--error"]);
-    } else {
-      errorElement.classList.add(styles["info--hidden"]);
-      errorElement.textContent = "";
-      inputElement.classList.remove(styles["input--error"]);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     let hasErrors = false;
 
     if (!formData.number || formData.number.trim() === "") {
-      handleError("number", "Card number is required");
+      console.log("number", "Card number is required");
       hasErrors = true;
     } else if (!/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/.test(formData.number)) {
-      handleError("number", "Invalid card number format");
+      console.log("number", "Invalid card number format");
       hasErrors = true;
     }
 
     if (!formData.name || formData.name.trim() === "") {
-      handleError("name", "Cardholder name is required");
+      console.log("name", "Cardholder name is required");
       hasErrors = true;
     } else if (!/^[a-zA-Z\s]+$/.test(formData.name.trim())) {
-      handleError("name", "Invalid cardholder name");
+      console.log("name", "Invalid cardholder name");
       hasErrors = true;
     }
 
     if (!formData.mm || !formData.yy) {
-      handleError("mm", "Expiry date is required");
+      console.log("mm", "Expiry date is required");
       hasErrors = true;
     } else if (Number(formData.mm) < 1 || Number(formData.mm) > 12) {
-      handleError("mm", "Invalid expiry month");
+      console.log("mm", "Invalid expiry month");
       hasErrors = true;
     } else if (Number(formData.yy) < 0 || Number(formData.yy) > 99) {
-      handleError("yy", "Invalid expiry year");
+      console.log("yy", "Invalid expiry year");
       hasErrors = true;
     }
 
     if (!formData.cvc || formData.cvc.trim() === "") {
-      handleError("cvc", "CVC is required");
+      console.log("cvc", "CVC is required");
       hasErrors = true;
     } else if (!/^\d{3}$/.test(formData.cvc)) {
-      handleError("cvc", "Invalid CVC");
+      console.log("cvc", "Invalid CVC");
       hasErrors = true;
     }
-
-    if (!hasErrors) {
-      animateSlider(true);
+    if (hasErrors) {
+      return;
     }
   };
   return (
@@ -162,7 +146,7 @@ export default function CardForm({ setFormData, formData, animateSlider }) {
         </label>
       </div>
 
-      <button type="submit" className={styles.button}>
+      <button type="button" className={styles.button} onClick={handleSubmit}>
         Confirm
       </button>
     </form>

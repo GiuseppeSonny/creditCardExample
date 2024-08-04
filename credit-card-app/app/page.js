@@ -16,38 +16,15 @@ export default function Home() {
   });
   const [validate, setValidate] = useState(false);
 
-  const animateSlider = (validate) => {
-    const axis = window.matchMedia("(max-width: 750px)").matches ? "Y" : "X";
-    document.querySelector(
-      ".cardOverflow > div"
-    ).style.transform = `translate${axis}(50${axis === "Y" ? "vh" : "vw"})`;
-
-    document.body.classList.add("body-slider");
-
-    setTimeout(() => {
-      setValidate(validate);
-      document.body.classList.remove("body-slider");
-      document.querySelector(".cardOverflow > div").style.transform =
-        "translate(0)";
-    }, 500);
-  };
-
   return (
     <>
       <CreditCard formData={formData} />
-      <main>
+      <main className={styles.main}>
         <div>
           {validate ? (
-            <CardValidator
-              setFormData={setFormData}
-              animateSlider={animateSlider}
-            />
+            <CardValidator setFormData={setFormData} />
           ) : (
-            <CardForm
-              setFormData={setFormData}
-              animateSlider={animateSlider}
-              formData={formData}
-            />
+            <CardForm setFormData={setFormData} formData={formData} />
           )}
         </div>
       </main>

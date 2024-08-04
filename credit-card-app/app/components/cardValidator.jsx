@@ -7,12 +7,9 @@ export default function CardValidator({ setFormData, animateSlider }) {
   };
 
   return (
-    <div className="cardThanks">
-      <p>Thank you!</p>
-      <p>We&apos;ve added your card details</p>
-      <button className="btn-primary" onClick={resetForm}>
-        Continue
-      </button>
+    <div>
+      <p> added card details</p>
+      <button onClick={resetForm}>Continue</button>
     </div>
   );
 }

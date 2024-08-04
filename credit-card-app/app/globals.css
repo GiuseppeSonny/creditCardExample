@@ -1,12 +1,25 @@
-#root {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: Roboto Mono;
 }
 
-@media screen and (max-width: 750px) {
-  #root {
-    flex-direction: column;
-  }
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul {
+  list-style-type: none;
 }

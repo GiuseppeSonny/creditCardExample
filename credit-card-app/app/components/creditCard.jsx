@@ -2,7 +2,7 @@ import styles from "./card.module.scss";
 
 export default function CreditCard({ formData }) {
   return (
-    <aside className={styles.main}>
+    <main className={styles.main}>
       <div className={styles.cardFront}>
         <img className={styles.logoFront} src="/logo.svg" alt="logo" />
         <span>{formData.number || "0000 0000 0000 0000"}</span>
@@ -19,6 +19,6 @@ export default function CreditCard({ formData }) {
         <img className={styles.logoBack} src="/logo.svg" alt="logo" />
         <span className={styles.cvcText}>{formData.cvc || "000"}</span>
       </div>
-    </aside>
+    </main>
   );
 }
