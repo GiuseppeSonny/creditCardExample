@@ -17,9 +17,9 @@ export default function Home() {
   const [validate, setValidate] = useState(false);
 
   return (
-    <>
+    <main className={styles.main}>
       <CreditCard formData={formData} />
-      <main className={styles.main}>
+      <div>
         <div>
           {validate ? (
             <CardValidator setFormData={setFormData} />
@@ -27,7 +27,7 @@ export default function Home() {
             <CardForm setFormData={setFormData} formData={formData} />
           )}
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

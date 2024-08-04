@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+  
+  @media only screen and (max-width: 767px) {
+    .main {
+      flex-direction: column-reverse;
+      height: 100%;
+    }
+  }
