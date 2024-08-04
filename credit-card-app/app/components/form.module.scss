@@ -6,7 +6,6 @@
   margin-left: auto;
   height: 100vh;
   padding: 1rem;
-  border: 2px solid red;
   gap: 12px;
   background-color: #f7f7f7;
   position: fixed;
@@ -20,8 +19,8 @@
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-
-  font-size: 15px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .cardForm input:hover {
