@@ -153,7 +153,7 @@ export default function CardForm({ setFormData, formData, animateSlider }) {
           CVC
           <input
             type="text"
-            placeholder="e.g. 123"
+            placeholder="123"
             onChange={handleInput}
             name="cvc"
             className={styles.cardInput}

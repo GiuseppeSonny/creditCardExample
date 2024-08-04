@@ -1,32 +1,24 @@
-.attribution {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  font-size: 12px;
-  opacity: 0.5;
-}
-.attribution p {
-  margin: 10px;
-}
-.cardFront,
-.cardBack {
-  max-width: 28rem;
-  height: 15.5rem;
-  border-radius: 10px;
-  background-size: cover;
-  color: var(--White);
-  position: relative;
-  padding: 32px;
-}
-
-/* Card Front ========*/
-.cardFront {
-  background-size: cover;
-  background-repeat: no-repeat;
+.main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin: 0 auto 32px auto;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  background: linear-gradient(to top, #4a00e0, #8e2de2);
+}
+
+.cardFront {
+  width: 380px;
+  height: 240px;
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cardFront div {
@@ -50,62 +42,41 @@
   text-transform: uppercase;
 }
 
-/* Card Back =======*/
+.logoFront {
+  width: 35px;
+  align-self: flex-start;
+}
+
 .cardBack {
-  background-size: contain;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  margin: 0 2rem 0 auto;
+  width: 380px;
+  height: 240px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-.cardBack span {
-  position: absolute;
-  right: 60px;
-  top: 109px;
-  font-size: 24px;
+.blackstripe {
+  background-color: #333333;
+  width: 100%;
+  height: 60px;
 }
 
-.cardFront::after {
-  position: absolute;
-  top: 27px;
-  left: 27px;
+.logoBack {
+  width: 35px;
+  align-self: center;
+  margin: 30px 0;
 }
 
-/* ===== */
-.cardDeco {
-  width: 54%;
-  padding: 2rem;
+.cvcText {
+  text-align: right;
+  padding-right: 12px;
 }
 
-.cardOverflow {
-  width: 46%;
-  overflow: hidden;
-}
-
-.cardOverflow > div {
-  transition: transform 0.35s ease-in-out;
-}
-
-.btn-primary {
-  background: var(--Verdarviolet);
-  border: none;
-  padding: 15px 20px;
-  color: var(--White);
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 18px;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.card-input {
-  padding: 13px;
-  border: 1px solid var(--Dargrayisviolet);
-  border-radius: 7px;
-}
-
-.card-input::placeholder {
-  opacity: 0.7;
+@media only screen and (max-width: 767px) {
+  .main {
+    width: 100%;
+  }
 }
